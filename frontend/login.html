@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - TokenOps</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { theme: { extend: { colors: { brand: { 400: '#2dd4bf', 500: '#14b8a6', 600: '#0d9488', 900: '#134e4a'}, dark: { 900: '#0f172a', 800: '#1e293b', 700: '#334155', 600: '#475569' } }, fontFamily: { sans: ['Inter', 'sans-serif'] } } } }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { background-color: #0f172a; color: #f8fafc; font-family: 'Inter', sans-serif; overflow: hidden; }
+        .glass-panel { background: rgba(30, 41, 59, 0.4); backdrop-filter: blur(16px); border: 1px solid rgba(51, 65, 85, 0.8); }
+        .bg-grid { background-image: linear-gradient(to right, #1e293b 1px, transparent 1px), linear-gradient(to bottom, #1e293b 1px, transparent 1px); background-size: 40px 40px; }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex items-center justify-center relative bg-grid">
+
+    <!-- Glowing Background Elements -->
+    <div class="fixed inset-0 z-0 overflow-hidden pointer-events-none flex justify-center items-center">
+        <div class="w-[600px] h-[600px] bg-brand-600 rounded-full mix-blend-screen filter blur-[150px] opacity-20"></div>
+    </div>
+
+    <!-- Login Container -->
+    <div class="w-full max-w-md px-6 relative z-10 animate-[fade-in-up_0.5s_ease-out_forwards]">
+        
+        <div class="text-center mb-8">
+            <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-brand-400 to-blue-600 flex items-center justify-center shadow-lg shadow-brand-500/30 mx-auto mb-6 transform rotate-3 hover:rotate-6 transition-transform">
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+            </div>
+            <h2 class="text-3xl font-extrabold tracking-tight text-white mb-2">Welcome back</h2>
+            <p class="text-slate-400 text-sm">Login to your TokenOps dashboard</p>
+        </div>
+
+        <form onsubmit="event.preventDefault(); localStorage.setItem('tokentamer_api_key', document.getElementById('api_key').value); window.location.href = 'dashboard.html';" class="glass-panel p-8 rounded-2xl shadow-2xl">
+            
+            <div class="space-y-5 mb-8">
+                <div>
+                    <div class="flex justify-between items-center mb-1.5">
+                        <label class="block text-sm font-medium text-slate-300" for="api_key">TokenOps API Key</label>
+                    </div>
+                    <input type="password" id="api_key" required placeholder="Enter your TOKENTAMER_API_KEY" class="w-full px-4 py-3 bg-dark-900/50 border border-dark-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent text-white placeholder-slate-500 transition-all">
+                    <p class="text-xs text-slate-500 mt-2">Found in your backend/.env file.</p>
+                </div>
+            </div>
+
+            <button type="submit" class="w-full py-3.5 px-4 bg-brand-500 hover:bg-brand-400 text-dark-900 font-bold rounded-xl shadow-lg shadow-brand-500/20 transition-all transform hover:scale-[1.02]">
+                Log in to Dashboard
+            </button>
+
+        </form>
+
+        <p class="mt-6 text-center text-sm text-slate-500">
+            Don't have an account? <a href="#" class="text-brand-400 hover:text-brand-300 font-medium hover:underline">Request Access</a>
+        </p>
+
+    </div>
+
+    <style>
+        @keyframes fade-in-up {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</body>
+</html>

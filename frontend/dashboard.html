@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - TokenOps</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { theme: { extend: { colors: { brand: { 500: '#14b8a6', 600: '#0d9488', 900: '#134e4a'}, dark: { 900: '#0f172a', 800: '#1e293b', 700: '#334155', 600: '#475569' } }, fontFamily: { sans: ['Inter', 'sans-serif'] } } } }
+    </script>
+    <!-- Chart.js for graphs -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="./assets/css/styles.css" rel="stylesheet">
+</head>
+<body class="bg-dark-900 text-slate-200">
+    <div id="sidebar-container"></div>
+    <div class="main-wrapper">
+        <div id="navbar-container"></div>
+        <main class="content-area">
+            <div id="dashboard-content" class="space-y-6">
+                <!-- Dashboard content will be injected by JS -->
+                <div class="animate-pulse flex space-x-4">
+                    <div class="flex-1 space-y-4 py-1">
+                        <div class="h-4 bg-dark-700 rounded w-3/4"></div>
+                        <div class="space-y-3">
+                            <div class="h-32 bg-dark-800 rounded"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Components & UI Setup -->
+    <script src="./components/navbar.js"></script>
+    <script src="./components/sidebar.js"></script>
+    <script src="./components/cards.js"></script>
+    
+    <!-- Backend Logic -->
+    <script src="./assets/js/utils.js"></script>
+    <script src="./assets/js/api.js"></script>
+    <script src="./assets/js/dashboard.js"></script>
+</body>
+</html>

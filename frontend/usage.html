@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usage - TokenOps</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { theme: { extend: { colors: { brand: { 500: '#14b8a6', 600: '#0d9488', 900: '#134e4a' }, dark: { 900: '#0f172a', 800: '#1e293b', 700: '#334155', 600: '#475569' } }, fontFamily: { sans: ['Inter', 'sans-serif'] } } } }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="./assets/css/styles.css" rel="stylesheet">
+</head>
+
+<body class="bg-dark-900 text-slate-200">
+    <div id="sidebar-container"></div>
+    <div class="main-wrapper">
+        <div id="navbar-container"></div>
+        <main class="content-area">
+            <div id="usage-content" class="space-y-6"></div>
+        </main>
+    </div>
+    <script src="./components/navbar.js"></script>
+    <script src="./components/sidebar.js"></script>
+    <script src="./assets/js/utils.js"></script>
+    <script src="./assets/js/api.js"></script>
+    <script src="./assets/js/usage.js"></script>
+</body>
+
+</html>
