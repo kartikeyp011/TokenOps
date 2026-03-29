@@ -140,10 +140,11 @@ cd TokenOps\backend
 venv\Scripts\activate
 python run_server.py
 ```
-*The server will start on `http://127.0.0.1:8000`. Swagger API documentation is available at `http://127.0.0.1:8000/docs`.*
+*The server will start on `http://127.0.0.1:8000`.
+Swagger API documentation is available at `http://127.0.0.1:8000/docs`.*
 
-### Frontend Dashboard
-Simply open `TokenOps/frontend/index.html` in your web browser. No compilation required.
+### Frontend
+Simply open `http://127.0.0.1:8000` in your web browser.
 
 ---
 
